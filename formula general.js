@@ -1,9 +1,16 @@
-var a = parseInt(prompt("variable a"));
-var b = parseInt(prompt("variable b"));
-var c = parseInt(prompt("variable c"));
-
-var solu1 = ((-1*-b) + (Math.sqrt((Math.pow(b,2) - (4*a*c)))))/(2*a);
-var solu2 = ((-1*-b) + (Math.sqrt((Math.pow(b,2) - (4*a*c)))))/(2*a);
-
-alert("solucion 1:"+solu1);
-alert("solucion 2:"+solu1);
+function FORMULA(a, b, c) {
+ 
+  let discriminante = (b ** 2 - 4 * a * c);
+  if (discriminante > 0){
+    let x1 = -b + Math.sqrt(discriminante)/ (2*a);
+    let x2 = -b - Math.sqrt(discriminante)/ (2*a);
+    return "Dos soluciones" + x1 + " y "+ x2;
+  }
+    else if(discriminante == 0){
+      let x1 =  -b / (2*a);
+      return console.log("Una solucion doble x1=" +x1, "x2="+x1 )
+    }
+    else if (discriminante < 0){
+      return "Sin solución"
+    }    
+}
